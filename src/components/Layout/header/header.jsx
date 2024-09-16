@@ -1,7 +1,12 @@
 import React from 'react';
 import { HeaderContainer, HeaderRow, Logo,NavBar, MainMenu, MenuItem,NavLinks, FlexBox } from './header.styled';
+import { NavItem } from '../../../Data/NavItem';
+
 
 const Header = () => {
+
+const navItem = NavItem;
+
     return(
         <HeaderContainer>
             <HeaderRow>
@@ -9,11 +14,13 @@ const Header = () => {
                 <FlexBox>
                     <NavBar>
                         <MainMenu>
-                            <MenuItem><NavLinks href='/'>Dashboard</NavLinks></MenuItem>
-                            <MenuItem><NavLinks href='/blogs'>Blogs</NavLinks></MenuItem>
-                            <MenuItem><NavLinks href='/'>Resources</NavLinks></MenuItem>
-                            <MenuItem><NavLinks href='/practice'>Practice Questions</NavLinks></MenuItem>
-                            
+                            {navItem.map((item) => {
+                                return(
+                                    <MenuItem key={item.id}>
+                                        <NavLinks href={item.path}>{item.name}</NavLinks>
+                                    </MenuItem>
+                                )
+                            })}
                         </MainMenu>
                     </NavBar>
                 </FlexBox>

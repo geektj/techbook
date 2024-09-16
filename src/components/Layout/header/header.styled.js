@@ -1,14 +1,17 @@
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
+import { theme } from "../../../styles/theme";
 
 export const HeaderContainer = styled.header`
     background-color: ${theme.colors.white};
     width: 100%;
-    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 12px -5px rgba(144,164,174,.46);
+    /* box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 12px -5px rgba(144,164,174,.46); */
     height: 60px;
     padding: 10px 0px;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 
 `
 
